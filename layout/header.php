@@ -13,7 +13,7 @@ require_once('database/dbhelper.php');
     <link rel="stylesheet" href="css/details.css">
     <link rel="stylesheet" href="plugin/fontawesome/css/all.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <title>Asm-Nguyễn Đăng Thành-PS18241</title>
+    <title>𝓓𝓮𝓚𝓲</title>
 </head>
 
 <body>
@@ -69,7 +69,7 @@ require_once('database/dbhelper.php');
                         <?php
                         if (isset($_COOKIE['username'])) {
                             $username=$_COOKIE['username'];
-                            if ($username == 'AdminThanh'|| $username == 'admin') {
+                            if ($username == 'Admin01') {
                                 echo '<a style="color:black;" href="">' . $_COOKIE['username'] . '</a>
                                 <div class="logout">
                                     <a href="admin/"><i class="fas fa-user-edit"></i>Admin</a> <br>

@@ -135,6 +135,7 @@ if (isset($_GET['id'])) {
 
 <head>
     <title>Thêm Sản Phẩm</title>
+    <link rel="icon" type="image/x-icon" href="/admin/logo.png">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -162,7 +163,7 @@ if (isset($_GET['id'])) {
             <a class="nav-link" href="../product/">Quản lý sản phẩm</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Quản lý giỏ hàng</a>
+            <a class="nav-link" href="../dashboard.php">Quản lý giỏ hàng</a>
         </li>
     </ul>
     <div class="container">

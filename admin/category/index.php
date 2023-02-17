@@ -6,6 +6,7 @@ require_once('../database/dbhelper.php');
 
 <head>
     <title>Quản Lý Danh Mục</title>
+    <link rel="icon" type="image/x-icon" href="/admin/logo.png">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -42,7 +43,7 @@ require_once('../database/dbhelper.php');
             </a>
             <table class="table table-bordered table-hover">
                 <thead>
-                    <tr>
+                    <tr  style="text-align: center;">
                         <td width="70px">STT</td>
                         <td>Tên danh mục</td>
                         <td width="50px"></td>
@@ -57,8 +58,8 @@ require_once('../database/dbhelper.php');
                     $index = 1;
                     foreach ($categoryList as $item) {
                         echo '  <tr>
-                    <td>' . ($index++) . '</td>
-                    <td>' . $item['name'] . '</td>
+                    <td  style="text-align: center;">' . ($index++) . '</td>
+                    <td  style="text-align: center;">' . $item['name'] . '</td>
                     <td>
                         <a href="add.php?id=' . $item['id'] . '">
                             <button class=" btn btn-warning">Sửa</button> 

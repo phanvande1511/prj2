@@ -4,9 +4,10 @@ require_once('../database/dbhelper.php');
 ?>
 <!DOCTYPE html>
 <html>
-
+    
 <head>
     <title>Quản Lý Sản Phẩm</title>
+    <link rel="icon" type="image/x-icon" href="/admin/logo.png">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -35,7 +36,7 @@ require_once('../database/dbhelper.php');
     <div class="container">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h2 class="text-center">Quản lý Sản Phẩm</h2>
+                <h2 class="text-center">Quản lý sản phẩm</h2>
             </div>
             <div class="panel-body"></div>
             <a href="add.php">
@@ -43,7 +44,7 @@ require_once('../database/dbhelper.php');
             </a>
             <table class="table table-bordered table-hover">
                 <thead>
-                    <tr style="font-weight: 500;">
+                    <tr style="font-weight: 500; text-align: center;">
                         <td width="70px">STT</td>
                         <td>Thumbnail</td>
                         <td>Tên Sản Phẩm</td>
@@ -55,7 +56,7 @@ require_once('../database/dbhelper.php');
                         <td width="50px"></td>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody style="text-align:center;">
                     <?php
                     // Lấy danh sách Sản Phẩm
                     if (!isset($_GET['page'])) {

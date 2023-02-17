@@ -44,6 +44,7 @@ if (isset($_GET['id'])) {
 
 <head>
     <title>Thêm Danh Mục</title>
+    <link rel="icon" type="image/x-icon" href="/admin/logo.png">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -77,7 +78,7 @@ if (isset($_GET['id'])) {
             <div class="panel-body">
                 <form method="POST">
                     <div class="form-group">
-                        <label for="name">Tên Danh Mục:</label>
+                        <label for="name"> Danh Mục:</label>
                         <input type="text" id="id" name="id" value="<?= $id ?>" hidden='true'>
                         <input required="true" type="text" class="form-control" id="name" name="name" value="<?= $name ?>">
                     </div>

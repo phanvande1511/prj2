@@ -4,6 +4,7 @@
 
 <head>
     <title>Thêm Sản Phẩm</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -18,9 +19,10 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href=" statistic.css">
 </head>
 
-<body>
+<body class="font-fix">
     <div id="wrapper">
         <header>
             <ul class="nav nav-tabs">
@@ -38,102 +40,97 @@
                 </li>
             </ul>
         </header>
-        <div class="container">
+        <div class="container" class>
             <main>
+                <br><br>
                 <h1>Bảng thống kê</h1>
                 <section class="dashboard">
-                    <div class="table">
+                    <div class="table dashboard-fix">
                         <div class="sp">
-                            <p>Sản phẩm</p>
+                            <p style="font-family: sans-serif;">Sản phẩm</p>
                             <?php
                             $sql = "SELECT * FROM `product`";
                             $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
                             $result = mysqli_query($conn, $sql);
-                            echo '<span>' . mysqli_num_rows($result) . '</span>';
+                            echo '<span style="font-family:sans-serif">' . mysqli_num_rows($result) . '</span>';
                             ?>
-                            <p><a href="product/">xem chi tiết➜</a></p>
-                        </div>
-                        <div class="sp kh">
-                            <p>Khách hàng</p>
-                            <?php
-                            $sql = "SELECT * FROM `user`";
-                            $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
-                            $result = mysqli_query($conn, $sql);
-                            echo '<span>' . mysqli_num_rows($result) . '</span>';
-                            ?>
-                            <p><a href="">xem chi tiết➜</a></p>
-                        </div>
-                        <div class="sp dm">
-                            <p>Danh mục</p>
-                            <?php
-                            $sql = "SELECT * FROM `category`";
-                            $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
-                            $result = mysqli_query($conn, $sql);
-                            echo '<span>' . mysqli_num_rows($result) . '</span>';
-                            ?>
-                            <p><a href="category/">xem chi tiết➜</a></p>
-                        </div>
-                        <div class="sp dh">
-                            <p>Đơn hàng</p>
-                            <?php
-                            $sql = "SELECT * FROM `order_details`";
-                            $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
-                            $result = mysqli_query($conn, $sql);
-                            echo '<span>' . mysqli_num_rows($result) . '</span>';
-                            ?>
-                            <p><a href="dashboard.php">xem chi tiết➜</a></p>
-                        </div>
-                    </div>
-                </section>
-                <section class="new-order">
-                    <h4>Đơn hàng mới</h4>
-                    <table>
-                        <tr class="bold">
-                            <td>STT</td>
-                            <td>Tên</td>
-                            <td>Tên sản phẩm/Số lượng</td>
-                            <td>Giá sản phẩm</td>
-                            <td>Địa chỉ</td>
-                            <td>Số điện thoại</td>
-                        </tr>
+                            <p>
+                             <a style="font-family:sans-serif" href="product/">Xem chi tiết ➜</a>
+                         </p>
+                     </div>
+                     
+                     <div class="sp dm">
+                        <p style="font-family: sans-serif;">Danh mục</p>
                         <?php
-                            try {
+                        $sql = "SELECT * FROM `category`";
+                        $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
+                        $result = mysqli_query($conn, $sql);
+                        echo '<span style="font-family:sans-serif">' . mysqli_num_rows($result) . '</span>';
+                        ?>
+                        <p><a style="font-family: sans-serif;" href="category/">Xem chi tiết ➜</a></p>
+                    </div>
+                    <div class="sp dh">
+                        <p style="font-family: sans-serif;">Đơn hàng</p>
+                        <?php
+                        $sql = "SELECT * FROM `order_details`";
+                        $conn = mysqli_connect(HOST, USERNAME, PASSWORD, DATABASE);
+                        $result = mysqli_query($conn, $sql);
+                        echo '<span style="font-family:sans-serif">' . mysqli_num_rows($result) . '</span>';
+                        ?>
+                        <p><a style="font-family: sans-serif;" href="dashboard.php">Xem chi tiết ➜</a></p>
+                    </div>
+                </div>
+            </section>
+            <section class="new-order">
+                <h4>Đơn hàng mới</h4>
+                <table class="table-fix">
+                    <tr class="bold header-table">
+                        <td>STT</td>
+                        <td>Tên</td>
+                        <td>Tên sản phẩm / Số lượng</td>
+                        <td>Giá sản phẩm</td>
+                        <td>Địa chỉ</td>
+                        <td>Số điện thoại</td>
+                    </tr>
+                    <?php
+                    try {
 
-                                if (isset($_GET['page'])) {
-                                    $page = $_GET['page'];
-                                } else {
-                                    $page = 1;
-                                }
-                                $limit = 10;
-                                $start = ($page - 1) * $limit;
+                        if (isset($_GET['page'])) {
+                            $page = $_GET['page'];
+                        } else {
+                            $page = 1;
+                        }
+                        $limit = 10;
+                        $start = ($page - 1) * $limit;
 
-                                $sql = "SELECT * from orders, order_details, product
-                                where order_details.order_id=orders.id and product.id=order_details.product_id ORDER BY order_date DESC limit $start,$limit ";
-                                $order_details_List = executeResult($sql);
-                                $total = 0;
-                                $count = 0;
+                        $sql = "SELECT * from orders, order_details, product
+                        where order_details.order_id=orders.id and product.id=order_details.product_id ORDER BY order_date DESC limit $start,$limit ";
+                        $order_details_List = executeResult($sql);
+                        $total = 0;
+                        $count = 0;
                                 // if (is_array($order_details_List) || is_object($order_details_List)){
-                                foreach ($order_details_List as $item) {
-                                    echo '
-                                        <tr style="text-align: center;">
-                                            <td>' . (++$count) . '</td>
-                                            <td>' . $item['fullname'] . '</td>
-                                            <td>' . $item['title'] . '<br>(<strong>' . $item['num'] . '</strong>)</td>
-                                            <td class="b-500 red">' . number_format($item['num'] * $item['price'], 0, ',', '.') . '<span> VNĐ</span></td>
-                                            <td>' . $item['address'] . '</td>
-                                            <td class="b-500">' . $item['phone_number'] . '</td>
-                                        </tr>
-                                    ';
-                                }
-                            } catch (Exception $e) {
-                                die("Lỗi thực thi sql: " . $e->getMessage());
-                            }
-                            ?>
-                    </table>
-                </section>
-            </main>
-        </div>
+                        foreach ($order_details_List as $item) {
+                            echo '
+                            <tr style="text-align: center;">
+                            <td>' . (++$count) . '</td>
+                            <td>' . $item['fullname'] . '</td>
+                            <td>' . $item['title'] . '<br>(<strong>' . $item['num'] . '</strong>)</td>
+                            <td class="b-500 red">' . number_format($item['num'] * $item['price'], 0, ',', '.') . '<span> VNĐ</span></td>
+                            <td>' . $item['address'] . '</td>
+                            <td class="b-500">' . $item['phone_number'] . '</td>
+                            </tr>
+                            ';
+                        }
+                    } catch (Exception $e) {
+                        die("Lỗi thực thi sql: " . $e->getMessage());
+                    }
+                    ?>
+                </table>
+                <br><br>
+            </section>
+        </main>
     </div>
+</div>
 </body>
 <style>
     #wrapper{
@@ -149,6 +146,14 @@
 
     .green {
         color: green;
+    }
+
+    table td tr {
+    border: 1px solid white;
+    }
+
+    .br-sp {
+        background-color: white;
     }
 </style>
 

@@ -1,0 +1,29 @@
+.dashboard-fix {
+	display: grid;
+	grid-column-gap: 20px;
+	grid-template-columns: auto auto auto;
+}
+
+.font-fix {
+	font-family: sans-serif;
+}
+
+table {
+	 border: 0px solid white;
+  border-collapse: collapse;
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.header-table {
+	background-color: black;
+	color: white;
+	padding: 20px;
+}
+
+table td tr {
+    border: 1px solid white;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+

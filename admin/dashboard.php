@@ -3,7 +3,8 @@
 <html>
 
 <head>
-    <title>Thêm Sản Phẩm</title>
+    <title>Quản lý giỏ hàng</title>
+    <link rel="icon" type="image/x-icon" href="logo.png">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -78,7 +79,7 @@
                                             <td width="50px">' . (++$count) . '</td>
                                             <td style="text-align:center">' . $item['fullname'] . '</td>
                                             <td>' . $item['title'] . '<br>(<strong>' . $item['num'] . '</strong>)</td>
-                                            <td class="b-500 red">' . number_format($item['price'], 0, ',', '.') . '<span> VNĐ</span></td>
+                                            <td class="b-500 red">' . number_format($item['num'] * $item['price'], 0, ',', '.') . '<span> VNĐ</span></td>
                                             <td width="100px">' . $item['address'] . '</td>
                                             <td width="100px">' . $item['phone_number'] . '</td>
                                             <td width="100px" class="green b-500">' . $item['status'] . '</td>
