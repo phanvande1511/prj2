@@ -31,22 +31,42 @@ table tr:nth-child(even){background-color: #f2f2f2;}
 .edit-category {
 	width: 32px;
 	height: 32px;
-	background: url("/prj2/admin/edit.png") no-repeat;
+	background: url("../img/edit.png") no-repeat;
 }
 
 .edit-category:hover {
 	width: 32px;
 	height: 32px;
-	background: url("/prj2/admin/edit-hover.png") no-repeat;
+	background: url("../img/edit-hover.png") no-repeat;
 }
 
 
 /*delete*/
 
-.delete {
+.dlt-ctgr {
 	width: 32px;
 	height: 32px;
-	background: url("/prj2/admin/delete.png") no-repeat;
+	background: url("../img/delete.png") no-repeat;
+}
+
+.dlt-ctgr:hover {
+	width: 32px;
+	height: 32px;
+	background: url("../img/delete-hover.png") no-repeat;
+}
+
+/*add*/
+
+.add-ctgr {
+	width: 32px;
+	height: 32px;
+	background: url("../img/add.png") no-repeat;
+}
+
+.add-ctgr:hover {
+	width: 32px;
+	height: 32px;
+	background: url("../img/add-hover.png") no-repeat;
 }
 
 

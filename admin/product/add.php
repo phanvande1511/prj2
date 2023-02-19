@@ -135,7 +135,7 @@ if (isset($_GET['id'])) {
 
 <head>
     <title>Thêm Sản Phẩm</title>
-    <link rel="icon" type="image/x-icon" href="/admin/logo.png">
+    <link rel="icon" type="image/x-icon" href="../img/logo.png">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- jQuery library -->

@@ -6,7 +6,7 @@ require_once('../database/dbhelper.php');
 
 <head>
     <title>Quản Lý Danh Mục</title>
-    <link rel="icon" type="image/x-icon" href="/admin/logo.png">
+    <link rel="icon" type="image/x-icon" href="../img/logo.png">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -40,7 +40,7 @@ require_once('../database/dbhelper.php');
             </div><br><br>
             <div class="panel-body"></div>
             <a href="add.php">
-                <button class=" btn btn-success" style="margin-bottom:20px"><img src="/prj2/admin/edit.png"></button>
+                <button class=" btn add-ctgr btn-warning btn btn-success" style="margin-bottom:20px"></button>
             </a><br><br>
             <table class="table edit-tbl table-hover">
                 <thead>
@@ -67,7 +67,7 @@ require_once('../database/dbhelper.php');
                         </a> 
                     </td>
                     <td>            
-                    <button class="btn btn-danger" onclick="deleteCategory('.$item['id'].')">Xoá</button>
+                    <button class="btn dlt-ctgr btn-danger btn-warning" onclick="deleteCategory('.$item['id'].')"></button>
                     </td>
                 </tr>';
                     }
