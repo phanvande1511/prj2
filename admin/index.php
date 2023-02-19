@@ -149,7 +149,7 @@
     }
 
     table td tr {
-    border: 1px solid white;
+    border: 0px solid white;
     }
 
     .br-sp {

@@ -15,6 +15,7 @@ require_once('../database/dbhelper.php');
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="category.css">
 </head>
 
 <body>
@@ -33,17 +34,17 @@ require_once('../database/dbhelper.php');
         </li>
     </ul>
     <div class="container">
-        <div class="panel panel-primary">
+        <div class="panel panel-primary"><br><br>
             <div class="panel-heading">
                 <h2 class="text-center">Quản lý danh mục</h2>
-            </div>
+            </div><br><br>
             <div class="panel-body"></div>
             <a href="add.php">
-                <button class=" btn btn-success" style="margin-bottom:20px">Thêm Danh Mục</button>
-            </a>
-            <table class="table table-bordered table-hover">
+                <button class=" btn btn-success" style="margin-bottom:20px"><img src="/prj2/admin/edit.png"></button>
+            </a><br><br>
+            <table class="table edit-tbl table-hover">
                 <thead>
-                    <tr  style="text-align: center;">
+                    <tr class="header-table"  style="text-align: center;">
                         <td width="70px">STT</td>
                         <td>Tên danh mục</td>
                         <td width="50px"></td>
@@ -62,7 +63,7 @@ require_once('../database/dbhelper.php');
                     <td  style="text-align: center;">' . $item['name'] . '</td>
                     <td>
                         <a href="add.php?id=' . $item['id'] . '">
-                            <button class=" btn btn-warning">Sửa</button> 
+                            <button class="edit-btn edit-category btn btn-warning"></button> 
                         </a> 
                     </td>
                     <td>            
